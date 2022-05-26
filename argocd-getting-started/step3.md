@@ -27,9 +27,7 @@ Forward the environment's port to access podinfo's Web UI by executing following
 
 [Click here]({{TRAFFIC_HOST1_9898}}) and you will see podinfo's Web UI.
 
-Stop port-forwarding by <kbd>Ctrl</kbd>+<kbd>C</kbd> or execute following command:
-
-`^C`{{execute ctrl-seq}}
+Stop port-forwarding by <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 
 Congratulations!
 You deployed the podinfo to Kubernetes using Argo CD.
