@@ -25,7 +25,7 @@ Forward the environment's port to access Argo CD's Web UI by executing following
 
 `kubectl port-forward svc/argocd-server 443:443 --address 0.0.0.0 &> /dev/null &`{{execute}}
 
-Open `ArgoCD Dashboard` tab and log in as `admin`.
+[Click here]({{TRAFFIC_HOST1_443}}) to access ArgoCD dashboard and log in as `admin`.
 
 ![Argo CD Login Page](argocd_login.png)
 

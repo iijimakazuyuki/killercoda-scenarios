@@ -15,7 +15,7 @@ Forward the environment's port to access podinfo's Web UI by executing following
 
 `kubectl port-forward svc/podinfo 9898:9898 --address 0.0.0.0 &> /dev/null`{{execute}}
 
-Open `Podinfo` tab and confirm its Web UI is changed.
+[Click here]({{TRAFFIC_HOST1_9898}}) and confirm its Web UI is changed.
 
 Excellent!
 Now you can see the latest configuration and its history in your repository, and update via Git easily.

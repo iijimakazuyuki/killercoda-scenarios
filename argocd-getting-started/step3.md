@@ -2,7 +2,7 @@ Argo CD's declarative configuration is described as `Application` resources.
 
 Open the configuration file following:
 
-`manifest-application.yaml`{{open}}
+`manifest-application.yaml`
 
 It contains the line including Git repository URL as following:
 
@@ -25,7 +25,7 @@ Forward the environment's port to access podinfo's Web UI by executing following
 
 `kubectl port-forward svc/podinfo 9898:9898 --address 0.0.0.0 &> /dev/null`{{execute}}
 
-Open `Podinfo` tab and you will see its Web UI.
+[Click here]({{TRAFFIC_HOST1_9898}}) and you will see podinfo's Web UI.
 
 Stop port-forwarding by <kbd>Ctrl</kbd>+<kbd>C</kbd> or execute following command:
 
