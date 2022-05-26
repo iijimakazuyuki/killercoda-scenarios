@@ -5,10 +5,10 @@
   "time": "15 minutes",
   "details": {
     "assets": {
-      "controlplane": [
+      "host01": [
         {
           "file": "*",
-          "target": "~/"
+          "target": "/root"
         }
       ]
     },
