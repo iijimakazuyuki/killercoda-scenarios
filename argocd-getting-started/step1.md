@@ -26,11 +26,20 @@ Get its password by executing following command:
 
 `kubectl -n default get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo`{{execute}}
 
-Forward the environment's port to access Argo CD's Web UI by executing following command:
+Though Argo CD accepts only HTTPS traffic, the environment cannot forward it.
+Deploy Nginx as a reverse proxy to convert Argo CD's HTTPS traffic to HTTP by executing following commands:
 
-`kubectl port-forward svc/argocd-server 443:443 --address 0.0.0.0 &> /dev/null &`{{execute}}
+`kubectl apply -f nginx-cm.yaml`{{execute}}
 
-[Click here]({{TRAFFIC_HOST1_443}}) to access ArgoCD dashboard and log in as `admin`.
+`kubectl apply -f nginx-deploy.yaml`{{execute}}
+
+`kubectl apply -f nginx-svc.yaml`{{execute}}
+
+Forward the environment's port to access Argo CD's Web UI via Nginx by executing following command:
+
+`kubectl port-forward svc/nginx 80:80 --address 0.0.0.0 &> /dev/null &`{{execute}}
+
+[Click here]({{TRAFFIC_HOST1_80}}) to access Argo CD dashboard and log in as `admin`.
 
 ![Argo CD Login Page](argocd_login.png)
 
