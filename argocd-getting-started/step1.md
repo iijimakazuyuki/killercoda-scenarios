@@ -6,8 +6,9 @@ First, add Argo Helm repository by executing following command:
 
 Install Argo CD by executing following command:
 
-`helm install argocd argo/argo-cd`{{execute}}
+`helm install argocd argo/argo-cd -f <(echo {"configs": {"params": {"server.insecure": true}}})`{{execute}}
 
+This config is overwritten so that Argo CD can accept HTTP traffic, which the environment can forward.
 Installing takes minutes.
 Execute following command until the pod status shows up `Running`:
 
@@ -18,23 +19,9 @@ Get its password by executing following command:
 
 `kubectl -n default get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo`{{execute}}
 
-Though Argo CD accepts only HTTPS traffic, the environment cannot forward it.
-Deploy Nginx as a reverse proxy to convert Argo CD's HTTPS traffic to HTTP by executing following commands:
+Forward the environment's port to access Argo CD's Web UI by executing following command:
 
-`kubectl apply -f nginx-cm.yaml`{{execute}}
-
-`kubectl apply -f nginx-deploy.yaml`{{execute}}
-
-`kubectl apply -f nginx-svc.yaml`{{execute}}
-
-Nginx will start up in seconds.
-Execute following command until the pod status shows up `Running`:
-
-`kubectl get po -l app=nginx`{{execute}}
-
-Forward the environment's port to access Argo CD's Web UI via Nginx by executing following command:
-
-`kubectl port-forward svc/nginx 80:80 --address 0.0.0.0 &> /dev/null &`{{execute}}
+`kubectl port-forward svc/argocd-server 80:80 --address 0.0.0.0 &> /dev/null &`{{execute}}
 
 [Click here]({{TRAFFIC_HOST1_80}}) to access Argo CD dashboard and log in as `admin`.
 
