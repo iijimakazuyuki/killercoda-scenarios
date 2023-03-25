@@ -4,10 +4,6 @@ First, add Argo Helm repository by executing following command:
 
 `helm repo add argo https://argoproj.github.io/argo-helm`{{execute}}
 
-Then update repository information in the local environment by executing following command:
-
-`helm repo update`{{execute}}
-
 Install Argo CD by executing following command:
 
 `helm install argocd argo/argo-cd`{{execute}}
