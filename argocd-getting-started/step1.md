@@ -23,10 +23,10 @@ Forward the environment's port to access Argo CD's Web UI by executing following
 
 [Click here]({{TRAFFIC_HOST1_80}}) to access Argo CD dashboard and log in as `admin`.
 
-![Argo CD Login Page](argocd_login.png)
+![Argo CD Login Page](./argocd_login.png)
 
 You can see no applications in the dashboard.
 
-![Argo CD Applications](argocd_applications.png)
+![Argo CD Applications](./argocd_applications.png)
 
 Next, create your own Git repository to push your own deployment configuration.
