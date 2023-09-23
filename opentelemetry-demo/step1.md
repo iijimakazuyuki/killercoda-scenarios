@@ -4,7 +4,7 @@ First, install Helm by executing following command:
 
 `curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | HELM_INSTALL_DIR=/usr/bin bash`{{execute}}
 
-Then add Argo Helm repository by executing following command:
+Then add OpenTelemetry Helm repository by executing following command:
 
 `helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts`{{execute}}
 
