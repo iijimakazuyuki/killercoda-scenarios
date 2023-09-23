@@ -2,7 +2,7 @@ Set up Helm repository to install Argo CD in Kubernetes.
 
 First, install Helm by executing following command:
 
-`curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash`{{execute}}
+`curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | HELM_INSTALL_DIR=/usr/bin bash`{{execute}}
 
 Then add Argo Helm repository by executing following command:
 
