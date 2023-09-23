@@ -21,4 +21,5 @@ Forward the environment's port to access the frontend of OpenTelemetry Demo by e
 
 `kubectl port-forward svc/otel-demo-frontendproxy 8080:8080 --address 0.0.0.0 &> /dev/null &`{{execute}}
 
-[Click here]({{TRAFFIC_HOST1_8080}}) to access the frontend or [click here]({{TRAFFIC_HOST1_8080}}/grafana) to access the Grafana.
+[Click here]({{TRAFFIC_HOST1_8080}}) to access the frontend
+or [click here]({{TRAFFIC_HOST1_8080}}/grafana) to access the Grafana.
