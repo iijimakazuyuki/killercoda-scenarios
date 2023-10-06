@@ -11,11 +11,11 @@ Install Tanka and Jsonnet Bundler by executing following commands:
 
 Clone TNS repository by executing following command:
 
-`git clone https://github.com/grafana/tns`
+`git clone https://github.com/grafana/tns`{{execute}}
 
 Install TNS by executing following command:
 
-`tns/install kubernetes-admin@kubernetes`
+`tns/install kubernetes-admin@kubernetes`{{execute}}
 
 Installing takes minutes.
 Execute the following command until the status of all pods shows up `Running`:
