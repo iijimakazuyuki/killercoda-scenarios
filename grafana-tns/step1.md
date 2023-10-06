@@ -17,6 +17,8 @@ Install TNS by executing following command:
 
 `tns/install kubernetes-admin@kubernetes`{{execute}}
 
+When prompted `Please type 'yes' to confirm:`, answer `yes`{{execute}}.
+
 Installing takes minutes.
 Execute the following command until the status of all pods shows up `Running`:
 
