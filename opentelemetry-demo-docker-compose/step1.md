@@ -1,6 +1,6 @@
 First, install the latest Docker Compose by executing following commands:
 
-`curl -Lo docker-compose https://github.com/docker/compose/releases/download/v2.22.0/docker-compose-linux-x86_64`{{execute}}
+`curl -Lo docker-compose https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64`{{execute}}
 
 `chmod +x docker-compose`{{execute}}
 
