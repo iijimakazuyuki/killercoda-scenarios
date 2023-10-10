@@ -12,7 +12,7 @@ Clone OpenTelemetry demo repository by executing following command:
 
 Install OpenTelemetry demo by executing following command:
 
-`docker-compose -d -f opentelemetry-demo/docker-compose.minimal.yml --no-build`{{execute}}
+`docker-compose -f opentelemetry-demo/docker-compose.minimal.yml up -d --no-build`{{execute}}
 
 Installing takes minutes.
 
