@@ -1,6 +1,6 @@
 {
-  "title": "OpenTelemetry Demo Getting Started",
-  "description": "Setting up OpenTelemetry Demo.",
+  "title": "OpenTelemetry Demo Getting Started With Kubernetes",
+  "description": "Setting up OpenTelemetry Demo with kubernetes.",
   "difficulty": "Beginner",
   "time": "15 minutes",
   "details": {
