@@ -4,7 +4,7 @@ First, install the latest Docker Compose by executing following commands:
 
 `chmod +x docker-compose`{{execute}}
 
-`sudo mv docker-compose ${which docker-compose}`{{execute}}
+`sudo mv docker-compose $(which docker-compose)`{{execute}}
 
 Clone OpenTelemetry demo repository by executing following command:
 
