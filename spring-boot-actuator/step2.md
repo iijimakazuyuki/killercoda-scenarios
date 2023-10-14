@@ -1,5 +1,9 @@
 Set up Helm repository to install Prometheus in Kubernetes.
 
+First, install Helm by executing following command:
+
+`curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | HELM_INSTALL_DIR=/usr/bin bash`{{execute}}
+
 Add Prometheus community Helm repository by executing following command:
 
 `helm repo add prometheus-community https://prometheus-community.github.io/helm-charts`{{execute}}
