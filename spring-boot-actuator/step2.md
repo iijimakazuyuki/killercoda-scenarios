@@ -14,6 +14,6 @@ Execute following command until the pod status shows up `Running`:
 
 Forward the environment's port to access Prometheus's Web UI by executing following command:
 
-`kubectl port-forward svc/argocd-server 9090:9090 --address 0.0.0.0 &> /dev/null &`{{execute}}
+`kubectl port-forward svc/prometheus-server 9090:80 --address 0.0.0.0 &> /dev/null &`{{execute}}
 
 [Click here]({{TRAFFIC_HOST1_9090}}) to access Prometheus's Web UI.
