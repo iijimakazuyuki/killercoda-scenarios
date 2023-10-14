@@ -12,6 +12,11 @@ Execute following command until the pod status shows up `Running`:
 
 `kubectl get po -l app.kubernetes.io/name=grafana`{{execute}}
 
+Grafana creates initial admin account which name is `admin`.
+Get its password by executing following command:
+
+`kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo`{{execute}}
+
 Forward the environment's port to access Grafana's Web UI by executing following command:
 
 `kubectl port-forward svc/grafana 3000:80 --address 0.0.0.0 &> /dev/null &`{{execute}}
