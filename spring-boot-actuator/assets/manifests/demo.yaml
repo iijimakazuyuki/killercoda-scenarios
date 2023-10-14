@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo
+  template:
+    metadata:
+      labels:
+        app: demo
+    spec:
+      containers:
+      - name: demo
+        image: localhost/demo:0.0.1
+        imagePullPolicy: Never
+        ports:
+        - name: http
+          containerPort: 8080
+      nodeName: controlplane
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8080"
+    prometheus.io/path: /actuator/prometheus
+spec:
+  selector:
+    app: demo
+  ports:
+  - port: 8080
+    targetPort: http
