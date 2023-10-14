@@ -4,7 +4,7 @@ First, install JRE by executing following command:
 
 `apt install openjdk-17-jre-headless -y`{{execute}}
 
-And install nerdctl by executing following command:
+And install nerdctl by executing following commands:
 
 `curl -LO https://github.com/containerd/nerdctl/releases/download/v1.6.2/nerdctl-1.6.2-linux-amd64.tar.gz`{{execute}}
 
