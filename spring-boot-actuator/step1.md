@@ -1,10 +1,14 @@
-There is a Spring Boot demo application in the demo directory.
+There is a Spring Boot demo application in the current directory.
+This application can be built as a container image and run in kubernetes.
 
-First, install JRE by executing following command:
+First, build the application container image by executing following command:
 
-`apt install openjdk-17-jre-headless -y`{{execute}}
+`docker run -it --rm -v $PWD:/src -w /src gradle:8-jdk17 gradle jibBuildTar --image=localhost/demo:0.0.1`{{execute}}
 
-And install nerdctl by executing following commands:
+Now the container image is located in `build/jib-image.tar`.
+
+The container runtime of this environment's kubernetes is containerd.
+Install nerdctl, which is a command line tool of containerd, by executing following commands:
 
 `curl -LO https://github.com/containerd/nerdctl/releases/download/v1.6.2/nerdctl-1.6.2-linux-amd64.tar.gz`{{execute}}
 
@@ -12,21 +16,13 @@ And install nerdctl by executing following commands:
 
 `sudo mv nerdctl /usr/local/bin`{{execute}}
 
-Then build and load container image by executing following commands:
-
-`cd demo`{{execute}}
-
-`chmod +x gradlew`{{execute}}
-
-`./gradlew jibBuildTar --image=localhost/demo:0.0.1`{{execute}}
+Then load the container image to containerd by executing following commands:
 
 `nerdctl -n k8s.io image load -i build/jib-image.tar`{{execute}}
 
-Run the demo application on kubernetes by executing following commands:
+Run the demo application on kubernetes by executing following command:
 
-`cd ../manifests`{{execute}}
-
-`kubectl apply -f .`{{execute}}
+`kubectl apply -f manifests`{{execute}}
 
 Execute the following command until the status of a pod shows up `Running`:
 
