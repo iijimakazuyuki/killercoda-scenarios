@@ -10,7 +10,7 @@ Add Prometheus community Helm repository by executing following command:
 
 Install Prometheus by executing following command:
 
-`helm install prometheus prometheus-community/prometheus --set prometheus-node-exporter.enabled=false --set prometheus-pushgateway.enabled=false --set alertmanager.enabled=false --set kube-state-metrics.enabled=false`{{execute}}
+`helm install prometheus prometheus-community/prometheus --set prometheus-node-exporter.enabled=false --set prometheus-pushgateway.enabled=false --set alertmanager.enabled=false --set kube-state-metrics.enabled=false --set server.persistentVolume.enabled=false`{{execute}}
 
 Execute following command until the pod status shows up `Running`:
 
